@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+        <nav id="navbar">
+        <header><img src="images/git_logo.png"><h1>Git</h1></header>
+        <ul>
+         <li><a class="nav-link" href="#que_es_git" rel="internal">¿Qué es Git?</a></li>
+         <li><a class="nav-link" href="#control_versiones" rel="internal">Control de versiones</a></li>
+         <li><a class="nav-link" href="#repositorio_git" rel="internal">Repositorio Git</a></li>
+         <li><a class="nav-link" href="#comandos_basicos" rel="internal">Comandos básicos de Git</a></li>
+         <li><a class="nav-link" href="#repositorios_remotos" rel="internal">Trabajar con repositorios remotos</a></li>
+         <li><a class="nav-link" href="#flujos_trabajo" rel="internal">Flujos de Trabajo de Git</a></li>
+         <li><a class="nav-link" href="#recursos" rel="internal">Recursos</a></li>
+        </ul>
+        </nav>
+
+
+    <main id="main-doc">
+        <section class="main-section" id="que_es_git">
+            <header>¿Qué es Git?</header>
+            <p>Git es un software de control de versiones diseñado por <a href="https://es.wikipedia.org/wiki/Linus_Torvalds" target="_blank">Linus Torvalds</a>, pensando en la eficiencia y la 
+                confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente. 
+                Su propósito es llevar registro de los cambios en archivos de computadora y coordinar el trabajo que varias personas realizan 
+                sobre archivos compartidos.</p>
+            <p>Al principio, Git se pensó como un motor de bajo nivel sobre el cual otros pudieran escribir la interfaz de usuario o front end como <a href="https://es.wikipedia.org/wiki/Cogito_(software)" target="_blank">Cogito</a> o StGIT. Sin embargo, 
+                Git se ha convertido desde entonces en un sistema de control de versiones con funcionalidad plena. 4Hay algunos proyectos de mucha relevancia que ya usan Git, en particular, 
+                el grupo de programación del núcleo Linux.</p>
+            <p>En cuanto a derechos de autor Git es un software libre distribuible bajo los términos de la versión 2 de la <a href="https://es.wikipedia.org/wiki/GNU_General_Public_License" target="_blank">Licencia Pública General de GNU</a>.</p>   
+        </section>
+        <hr>
+
+        <section class="main-section" id="control_versiones">
+            <header>Control de versiones</header>
+            <p>¿Qué es un control de versiones, y por qué debería importarte? Un control de versiones es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. </p>
+            <p>Si eres diseñador gráfico o de web y quieres mantener cada versión de una imagen o diseño (es algo que sin duda vas a querer), usar un sistema de control de versiones (VCS por sus siglas en inglés) es una decisión muy acertada. Dicho sistema te permite regresar a versiones anteriores de tus archivos, 
+                regresar a una versión anterior del proyecto completo, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que pueda estar causando problemas, ver quién introdujo un problema y cuándo, y mucho más. Usar un VCS también significa generalmente que, si arruinas o pierdes archivos, 
+                será posible recuperarlos fácilmente. Adicionalmente, obtendrás todos estos beneficios a un costo muy bajo.</p>  
+        </section>
+        <hr>
+
+        <section class="main-section" id="repositorio_git">
+            <header>Repositorio Git</header>
+            <p>Un repositorio es un directorio donde se almacenan los archivos de tu proyecto. Puedes almacenar archivos de código, imágenes, audios o todo lo relacionado con el proyecto en el repositorio.</p>
+            <p>Puedes obtener un proyecto Git de dos maneras. La primera es tomar un proyecto o directorio existente e importarlo en Git. La segunda es clonar un repositorio existente en Git desde otro servidor.</p><br>
+            <h3>Inicializando un repositorio en un directorio existente</h3>
+            <p>Si estás empezando a seguir un proyecto existente en Git, debes ir al directorio del proyecto y usar el siguiente comando:</p>
+            <code>
+                <span>$ git init</span>
+            </code><br>
+            <h3>Clonando un repositorio existente</h3>
+            <p>Si deseas obtener una copia de un repositorio Git existente — por ejemplo, un proyecto en el que te gustaría contribuir — el comando que necesitas es git clone. 
+                Si estás familizarizado con otros sistemas de control de versiones como Subversion, verás que el comando es "clone" en vez de "checkout". Es una distinción importante, 
+                ya que Git recibe una copia de casi todos los datos que tiene el servidor. Cada versión de cada archivo de la historia del proyecto es descargada por defecto cuando ejecutas </p>
+            <code>
+                <span>$ git clone</span>
+            </code>
+        </section>
+        <hr>
+
+        <section class="main-section" id="comandos_basicos">
+            <header>Comandos básicos de Git</header>
+            <ul>
+                <li>git config</li>
+                <p>Uno de los comandos más usados en git es git config, que puede ser usado para establecer una configuración específica de usuario, como sería el caso del email, un algoritmo preferido para diff, nombre de usuario y tipo de formato, etc… Por ejemplo, el siguiente comando se usa para establecer un email:</p>
+                <code><span>$ git config --global user.email somethin@something.com</span></code><br>
+                <li>git init</li>
+                <p>Este comando se usa para crear un nuevo repertorio GIT:</p>
+                <code><span>$ git init</span></code><br>
+                <li>git add</li>
+                <p>Este comando puede ser usado para agregar archivos al index. Por ejemplo, el siguiente comando agrega un nombre de archivo temp.txt en el directorio local del index:</p>
+                <code><span>$ git add temp.txt</span></code><br>
+                <li>git clone</li>
+                <p>Este comando se usa con el propósito de revisar repertorios. Si el repertorio está en un servidor remoto se tiene que usar el siguiente comando:</p>
+                <code><span>$ git clone something@91.178.160.54:/path/to/repository</span></code>
+                <p>Pero si estás por crear una copia local funcional del repertorio, usa el comando:</p>
+                <code><span>$ git clone /path/to/repository</span></code><br>
+                <li>git commit</li>
+                <p>El comando commit es usado para cambiar a la cabecera. Ten en cuenta que cualquier cambio comprometido no afectara al repertorio remoto. Usa el comando:</p>
+                <code><span>$ git commit –m “Message to go with the commit here”</span></code><br>
+                <li>git status</li>
+                <p>Este comando muestra la lista de los archivos que se han cambiado junto con los archivos que están por ser añadidos o comprometidos.</p>
+                <code><span>$ git status</span></code><br>
+                <li>git push</li>
+                <p>Este es uno de los comandos más básicos. Un simple push envía los cambios que se han hecho en la rama principal de los repertorios remotos que están asociados con el directorio que está trabajando. Por ejemplo:</p>
+                <code><span>$ git push  origin master</span></code><br>
+                <li>git checkout</li>
+                <p>El comando checkout se puede usar para crear ramas o cambiar entre ellas. Por ejemplo, el siguiente comando crea una nueva y se cambia a ella:</p>
+                <code><span>$ command git checkout -b &lt;banch-name&gt;</span></code>
+                <p>Para cambiar de una rama a otra solo usa:</p>
+                <code><span>$ git checkout &lt;branch-name&gt;</span></code><br>
+                <li>git remote</li>
+                <p>El comando git se usa para conectar a un repositorio remoto. El siguiente comando muestra los repositorios remotos que están configurados actualmente:</p>
+                <code><span>$ git remote -v</span></code>
+                <p>Este comando te permite conectar al usuario con el repositorio local a un servidor remoto:</p>
+                <code><span>$ git remote add origin &lt;91.178.160.54&gt;</span></code><br>
+                <li>git branch</li>
+                <p>Este comando se usa para listar, crear o borrar ramas. Para listar todas las ramas se usa:</p>
+                <code><span>$ git branch</span></code>
+                <p>Para borrar la rama:</p>
+                <code><span>$ git branch -d &lt;branch-name&gt;</span></code><br>
+                <li>git pull</li>
+                <p>Para poder fusionar todos los cambios que se han hecho en el repositorio local trabajando, el comando que se usa es:</p>
+                <code><span>$ git pull</span></code><br>
+                <li>git merge</li>
+                <p>Este comando se usa para fusionar una rama con otra rama activa:</p>
+                <code><span>$ git merge &lt;branch-name&gt;</span></code><br>
+                <li>git diff</li>
+                <p>Este comando se usa para hacer una lista de conflictos. Para poder ver conflictos con el archivo base usa:</p>
+                <code><span>$ git diff --base &lt;file-name></span></code>
+                <p>El siguiente comando se usa para ver los conflictos que hay entre ramas que están por ser fusionadas para poder fusionarlas sin problemas:</p>
+                <code><span>$ git diff &lt;source-branch> &lt;target-branch></span></code>
+                <p>Para solo ver una lista de todos los conflictos presentes usa:</p>
+                <code><span>$ git diff</span></code><br>
+                <li>git tag</li>
+                <p>Etiquetar se usa para marcar commits específicos con asas simples. Por ejemplo:</p>
+                <code><span>$ git tag 1.1.0 &lt;instert-commitID-here></span></code><br>
+                <li>git log</li>
+                <p>Ejecutar este comando muestra una lista de commits en una rama junto con todos los detalles. </p>
+                <code><span>$ git log</span></code><br>
+                <li>git reset</li>
+                <p>Para resetear el index y el directorio que está trabajando al último estado comprometido se usa este comando:</p>
+                <code><span>$ git reset - -hard HEAD</span></code><br>
+                <li>git rm</li>
+                <p>Este comando se puede usar para remover archivos del index y del directorio que está trabajando:</p>
+                <code><span>$ git rm filename.txt</span></code><br>
+                <li>git stash</li>
+                <p>Este es uno de los comandos menos conocidos, pero ayuda a salvar cambios que no están por ser comprometidos inmediatamente, pero temporalmente:</p>
+                <code><span>$ git stash</span></code><br>
+                <li>git show</li>
+                <p>Se usa para mostrar información sobre cualquier objeto git. Por ejemplo:</p>
+                <code><span>$ git show</span></code><br>
+                <li>git fetch</li>
+                <p>Este comando le permite al usuario buscar todos los objetos de un repositorio remoto que actualmente no reside en el directorio local que está trabajando. Por ejemplo:</p>
+                <code><span>$ git fetch origin</span></code><br>
+                <li>git ls-tree</li>
+                <p>Para ver un objeto de árbol junto con el nombre y modo de cada uno de ellos, y el valor blob´s SHA-1, se usa:</p>
+                <code><span>$ git ls-tree HEAD</span></code><br>
+                <li>git cat-file</li>
+                <p>Usando el valor SHA-1, se puede ver el tipo de objeto usando este comando. Por ejemplo:</p>
+                <code><span>$ git cat-file –p d650461b4b0aebe58315caf4c68d12f360a9fa3e2</span></code><br>
+                <li>git grep</li>
+                <p>Este comando le permite al usuario buscar en los árboles de contenido cualquier frase o palabra. Por ejemplo, para buscar por www.tupaginaweb.com en todos los archivos se usaría:</p>
+                <code><span>$ git grep “www.tupaginaweb.com”</span></code><br>
+                <li>git instaweb</li>
+                <p>Con este comando un servidor web puede correr interconectado con el repositorio local. Un navegador web también está automáticamente dirigido a el:</p>
+                <code><span>$ git instaweb –http=webrick</span></code><br>
+                <li>gitk</li>
+                <p>Este es la interfaz gráfica para un repositorio local que puede invocar escribiendo y ejecutando:</p>
+                <code><span>$ gitk</span></code>
+              </ul>
+        </section>
+        <hr>
+        <section class="main-section" id="repositorios_remotos">
+            <header>Trabajar con repositorios remotos</header>
+                <p>Para poder colaborar en cualquier proyecto Git, necesitas saber cómo gestionar repositorios remotos. Los repositorios remotos son versiones de tu proyecto que están hospedadas en Internet o en cualquier otra red. Puedes tener varios de ellos, 
+                    y en cada uno tendrás generalmente permisos de solo lectura o de lectura y escritura. </p>
+                <p>Colaborar con otras personas implica gestionar estos repositorios remotos enviando y trayendo datos de ellos cada vez que necesites compartir tu trabajo. Gestionar repositorios remotos incluye saber cómo añadir un repositorio remoto, eliminar los remotos que ya no son válidos, 
+                    gestionar varias ramas remotas, definir si deben rastrearse o no y más. En esta sección, trataremos algunas de estas habilidades de gestión de remotos.</p>
+                <p>El comando que nos permite gestionar los repositorios remotos es git remote. Si hemos clonado (con git clone) nuestro proyecto, ya tendremos definido un repositorio remoto, que por defecto se identifica con el alias origin. El comando git remote -v nos mostrará todos los repositorios remotos que tengamos definidos:</p>  
+                <code>
+                    <span>[~/git-puesto-en-practica]$ git remote -v</span>
+                    <span>origin  git@github.com:something/git-puesto-en-practica.git (fetch)</span>
+                    <span>origin  git@github.com:something/git-puesto-en-practica.git (push)</span>
+                </code> <br>
+                <p>Añadimos o eliminamos repositorios remotos con estos dos comandos. El nombre (alias) que le damos al repositorio es a nuestro gusto, aunque como convenio se pone el repositorio base como origin. Añadir un repositorio:</p>
+                <code><span>git remote add octopress git://github.com/imathis/octopress.git</span></code>
+                <p>Borrar un repositorio:</p>
+                <code><span>git remote rm octopress</span></code><br>
+                <p>Git pull obtiene todos los últimos cambios del repositorio y hace un merge. Tal vez pull sea un comando "demasiado automático".  Git fetch es una alternativa más controlada, ya que al traerse los cambios del repositorio remoto no los aplica directamente sobre nuestro directorio de trabajo, sino que espera que nosotros lo hagamos manualmente. 
+                    Después de un git fetch es conveniente hacer un diff, comparando las ramas de trabajo local con la del repositorio remoto. Finalmente, si estamos de acuerdo con los cambios, ejecutaremos un merge. Git push envía nuestros últimos commits al repositorio.</p>
+            </section>
+            <hr>
+            <section class="main-section" id="flujos_trabajo">
+                <header>Flujos de Trabajo de Git</header>
+                <p>Si trabajamos en local (comenzamos en la imagen por la izquierda), inicializamos el directorio de trabajo (working directory). Podemos trabajar (editar ficheros) en el directorio de trabajo. Con el comando Git add enviamos los cambios a staging, que es un estado intermedio en el que se van almacenando los archivos a enviar en el commit. Finalmente con commit lo enviamos al repositorio local.</p>
+                <p>Si queremos colaborar con otros, con push subimos los archivos a un repo remoto y mediante pull podríamos traer los cambios realizados por otros en remoto hacia nuestro directorio de trabajo. Si comenzamos trabajando en remoto, lo primero que hacemos es un clon de la información en el directorio local.</p>
+                <div id="imgcontainer"><img src="https://i1.wp.com/www.diegocmartin.com/wp-content/uploads/2018/12/git-workflow1.png?resize=1024%2C684&ssl=1" alt="flujo de trabajo de git"></div>
+            </section>
+            <hr>
+            <section class="main-section" id="recursos">
+                <header>Recursos</header>
+                <p>La información presentada en esta página ha sido extraída de:</p>
+                <ul>
+                    <li><a href="https://es.wikipedia.org/wiki/Git" target="_blank">Wikipedia</a></li>
+                    <li><a href="https://git-scm.com/book/es/v2" target="_blank">Git-scm</a></li>
+                    <li><a href="https://www.diegocmartin.com/tutorial-git/" target="_blank">DiegoCMartín</a></li>
+                    <li><a href="https://www.hostinger.es/tutoriales/comandos-de-git" target="_blank">Hostinger Tutoriales</a></li>
+                    <li><a href="http://tombatossals.github.io/git-puesto-en-practica/trabajando-en-equipo/#1" target="_blank">Presentación: Git Trabajando en Equipo</a></li>
+                </ul>
+                
+            </section>
+       
+            <footer>Technical Documentation Page by @FatimaZDB for FreeCodeCamp</footer>
+           
+        </main>
+       
+        
+</body>
+
+</html>
